@@ -1,0 +1,27 @@
+<div>
+    <label for="email">Your Email Address:</label><br/>
+    <input type="email" id="email" [(ngModel)]="emailAddress" name="inputEmailAddress" #inputEmailAddress="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" /><br/>
+
+    <p *ngIf="inputEmailAddress?.errors?.required && formSubmitted" style="color:rgb(204, 32, 32)">
+        An email address is required.
+    </p>
+    <p *ngIf="inputEmailAddress?.errors?.pattern && formSubmitted" style="color:rgb(204, 32, 32)">
+        Your entered email address is invalid, please check the format!
+    </p>
+    <label for="feedback">Feedback:</label><br/>
+    <textarea id="feedback" [(ngModel)]="feedbackMsg" name="inputFeedbackMsg" #inputFeedbackMsg="ngModel" required></textarea>
+
+    <p *ngIf="inputFeedbackMsg?.errors?.required && formSubmitted" style="color:rgb(204, 32, 32)">
+        Feedback text is required. Please enter your feedback comments.
+    </p>
+
+    
+    <div>
+        <button class="button-primary" (click)="submitForm(inputEmailAddress.valid, inputFeedbackMsg.valid)">Send</button>
+    </div>
+    <!-- Show result from Post -->
+    <div *ngIf="feedbackResponseMsg" style="color:rgb(98, 32, 204)">
+        <p>{{feedbackResponseStatus}}</p>
+        <p>{{feedbackResponseMsg}}</p>
+    </div>
+</div>

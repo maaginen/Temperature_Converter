@@ -1,0 +1,33 @@
+<div>
+    <div>
+        Convert Celsius to Fahrenheit &#32;<input type="text" pattern="[0-9]*" [(ngModel)]="celsius" name="inputCelsius" style="margin-left: 15px" #inputCelsius="ngModel" required/>
+        <button (click)="submitCelsius(inputCelsius.valid)">Convert</button>
+    </div>
+    <p *ngIf="inputCelsius?.errors?.pattern && celsiusFormSubmitted" style="color:rgb(204, 32, 32)">
+        Only numeric characters are allowed.
+    </p>
+    <p *ngIf="inputCelsius?.errors?.required && celsiusFormSubmitted" style="color:rgb(204, 32, 32)">
+        Enter a Celsius temperature to convert.
+    </p>
+    <div>
+        <p *ngIf="returnedFahrenheit" style="color:rgb(43, 223, 43)">
+            {{ displayedCelsius }} Degrees Celsius is {{ returnedFahrenheit }} Degrees Fahrenheit.
+        </p>
+    </div>
+
+    <div>
+        Convert Fahrenheit to Celsius &#32;<input type="text" pattern="[0-9]*" [(ngModel)]="fahrenheit" name="inputFahrenheit" style="margin-left: 15px" #inputFahrenheit="ngModel" required/>
+        <button  (click)="submitFahrenheit(inputFahrenheit.valid)">Convert</button>
+    </div>
+    <p *ngIf="inputFahrenheit?.errors?.pattern && fahrenheitFormSubmitted" style="color:rgb(204, 32, 32)">
+        Only numeric characters are allowed.
+    </p>
+    <p *ngIf="inputFahrenheit?.errors?.required && fahrenheitFormSubmitted" style="color:rgb(204, 32, 32)">
+        Enter a Fahrenheit temperature to convert.
+    </p>
+    <div>
+        <p *ngIf="returnedCelsius" style="color:rgb(43, 223, 43)">
+            {{ displayedFahrenheit }} Degrees Fahrenheit is {{ returnedCelsius }} Degrees Celsius.
+        </p>
+    </div>
+</div>
