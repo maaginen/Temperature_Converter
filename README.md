@@ -1,4 +1,6 @@
-# Myapp
+# Temperature Conveter App
+
+Simple app that converts temperature from Celsius to Fahrenheit and back using Client-side validation, get and post calls, routing and the remote server.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.
 
@@ -22,6 +24,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
